@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Tabs, Tab, Button} from "react-bootstrap";
 
 const Projects = () => {
   return (
@@ -15,66 +15,41 @@ const Projects = () => {
     </Col>
 </Row>
 <Row className="mb-4">
-    <Col>
-    <Card style={{ width: '22rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Snake Clone (C++)</Card.Title>
-    <Card.Text>
-      Snake clone built with C++, using SDL2 as a development library.
-    </Card.Text>
-    <Button href="https://github.com/elcascavel/Snake" target="_blank" rel="noreferrer noopener" variant="primary">Github Repository</Button>
-  </Card.Body>
-</Card>
+<Tabs defaultActiveKey="snake" className="mt-3 mb-3">
+  <Tab eventKey="snake" title="Snake (C++)">
+    <Row className="align-items-center">
+    <Col className="px-0">
+    <img src="./snake_gameplay.png" width="80%" alt="snake game screenshot"></img>
     </Col>
     <Col>
-    <Card style={{ width: '22rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Klochon (JavaScript)</Card.Title>
-    <Card.Text>
-      Bot created for a few Discord servers using discord.js.
-    </Card.Text>
-    <Button href="https://github.com/elcascavel/Snake" target="_blank" variant="primary">Github Repository</Button>
-  </Card.Body>
-</Card>
+    <p>Snake clone built with C++ using SDL2. This was a huge milestone for me.</p>
+    <Button href="https://github.com/elcascavel/Snake" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">Github Repository</Button>{' '}
     </Col>
-    <Col>
-    <Card style={{ width: '22rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>API (JavaScript)</Card.Title>
-    <Card.Text>
-      API to be used by Klochon. This allowed me to fetch files from a database I created and serve them to whoever requested it on Discord.
-    </Card.Text>
-    <Button href="https://github.com/elcascavel/Snake" target="_blank" variant="primary">Github Repository</Button>
-  </Card.Body>
-</Card>
+    </Row>
+  </Tab>
+  <Tab eventKey="klochon" title="Klochon (JavaScript)">
+  <Row className="align-items-center">
+    <Col className="px-0">
+    <img src="./klochon-gta-api.gif" alt="klochon in action"></img>
     </Col>
-    <Col>
-    <Card style={{ width: '22rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Resumos CM</Card.Title>
-    <Card.Text>
-      Studying material for students in my bachelor's degree.
-    </Card.Text>
-    <Button href="https://github.com/elcascavel/Snake" target="_blank" variant="primary">Github Repository</Button>
-  </Card.Body>
-</Card>
+    <Col className="mt-2">
+    <p>Klochon is a Discord bot working in conjunction with an <span eventKey="gta-api">API</span> I programmed. It will fetch GTA San Andreas files from a database for modding purposes.</p>
+    <Button href="https://github.com/elcascavel/Klochon" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">Github Repository</Button>{' '}
     </Col>
-    <Col>
-    <Card style={{ width: '22rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>PHP Online Shop (PHP)</Card.Title>
-    <Card.Text>
-      A fictional online store written in PHP for a college project.
-    </Card.Text>
-    <Button href="https://github.com/elcascavel/Snake" target="_blank" variant="danger" disabled>Coming soon</Button>
-  </Card.Body>
-</Card>
-    </Col>
+    </Row>
+  </Tab>
+  <Tab eventKey="gta-api" title="GTA API (JavaScript)">
+    <p>This is the API working with Klochon. It was built with Express and JavaScript.</p>
+    <Button href="https://github.com/elcascavel/gta-api" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">Github Repository</Button>{' '}
+  </Tab>
+  <Tab eventKey="resumos-cm" title="Resumos CM">
+    <p>College notes for students in Communication and Multimedia. They are written in Portuguese.</p>
+    <Button href="https://github.com/elcascavel/ResumosCM" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">Github Repository</Button>{' '}
+  </Tab>
+  <Tab className="text-danger" eventKey="online-shop" title="Online Shop (PHP)" disabled>
+    php
+  </Tab>
+</Tabs>
 </Row>
     </Container>
   );

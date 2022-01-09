@@ -2,20 +2,34 @@ $body-color: #f8f8f2;
 $font-family-sans-serif: "Inter", sans-serif;
 $body-bg: #282a36;
 
-$colors: (
-    "dracula-cyan": #8be9fd,
-    "dracula-green": #50fa7b,
-    "dracula-orange": #ffb86c,
-    "dracula-pink": #ff79c6,
-    "dracula-purple": #bd93f9,
-    "dracula-red": #ff5555,
-    "dracula-yellow": #f1fa8c,
-    "dracula-white": #f8f8f2,
-    "dracula-dark": #44475a
+$dracula-cyan: #8be9fd;
+$dracula-green: #50fa7b;
+$dracula-orange: #ffb86c;
+$dracula-pink: #ff79c6;
+$dracula-purple: #bd93f9;
+$dracula-red: #ff5555;
+$dracula-yellow: #f1fa8c;
+$dracula-white: #f8f8f2;
+$dracula-dark: #44475a;
+
+$theme-colors: (
+    "dracula-cyan": $dracula-cyan,
+    "dracula-green": $dracula-green,
+    "dracula-orange": $dracula-orange,
+    "dracula-pink": $dracula-pink,
+    "dracula-purple": $dracula-purple,
+    "dracula-red": $dracula-red,
+    "dracula-yellow": $dracula-yellow,
+    "dracula-white": $dracula-white,
+    "dracula-dark": $dracula-dark
 );
 
-$navbar-dark-color: var(--bs-dracula-white);
-$navbar-dark-hover-color: var(--bs-dracula-pink);
+$navbar-dark-color: $dracula-white;
+$navbar-dark-hover-color: $dracula-pink;
+
+$nav-tabs-link-active-color: $dracula-pink;
+$nav-link-color: $dracula-white;
+$link-hover-color: $dracula-pink;
 
 .card {
     color: var(--bs-dracula-dark);
