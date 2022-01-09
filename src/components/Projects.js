@@ -45,8 +45,9 @@ const Projects = () => {
   <Tab eventKey="resumos-cm" title="Resumos CM">
     <p>College notes for students in Communication and Multimedia. They are written in Portuguese.</p>
     <Button href="https://github.com/elcascavel/ResumosCM" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">Github Repository</Button>{' '}
+    <Button href="https://elcascavel.me/ResumosCM" target="_blank" rel="noreferrer noopener" variant="outline-dracula-yellow">See It Live</Button>{' '}
   </Tab>
-  <Tab className="text-danger" eventKey="online-shop" title="Online Shop (PHP)" disabled>
+  <Tab eventKey="online-shop" title="Online Shop (PHP)" disabled>
     php
   </Tab>
 </Tabs>
