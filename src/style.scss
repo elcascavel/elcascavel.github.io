@@ -1,0 +1,56 @@
+$body-color: #f8f8f2;
+$font-family-sans-serif: "Inter", sans-serif;
+$body-bg: #282a36;
+
+$colors: (
+    "dracula-cyan": #8be9fd,
+    "dracula-green": #50fa7b,
+    "dracula-orange": #ffb86c,
+    "dracula-pink": #ff79c6,
+    "dracula-purple": #bd93f9,
+    "dracula-red": #ff5555,
+    "dracula-yellow": #f1fa8c,
+    "dracula-white": #f8f8f2,
+    "dracula-dark": #44475a
+);
+
+$navbar-dark-color: var(--bs-dracula-white);
+$navbar-dark-hover-color: var(--bs-dracula-pink);
+
+.card {
+    color: var(--bs-dracula-dark);
+}
+
+.navbar {
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.15);
+    background-color: $body-bg;
+}
+
+.name-font {
+    font-family: 'Signika Negative';
+    font-size: 35px;
+    animation: pulse 10s infinite;
+}
+
+.nickname-font:hover {
+    color: var(--bs-dracula-green);
+}
+
+@keyframes pulse {
+	0% { 
+        color: var(--bs-dracula-white);
+    }
+    50% { 
+        color: var(--bs-dracula-pink);
+    }
+    100% { 
+        color: var(--bs-dracula-white);
+    }
+}
+
+.title-color {
+    color: var(--bs-dracula-pink);
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Signika+Negative:wght@700&display=swap');

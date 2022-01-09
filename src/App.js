@@ -1,17 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import About from "./components/About";
+import Navigation from "./components/Navigation";
+import Projects from "./components/Projects";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Under Construction
-        </p>
-      </header>
-    </div>
-  );
-}
-
+const App = () => {
+    return ( <>
+        <Navigation/>
+        <About/>
+        <Projects/>
+        </>
+    );
+};
 export default App;
