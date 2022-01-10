@@ -31,6 +31,12 @@ $nav-tabs-link-active-color: $dracula-pink;
 $nav-link-color: $dracula-white;
 $link-hover-color: $dracula-pink;
 
+.root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .card {
     color: var(--bs-dracula-dark);
 }
@@ -64,6 +70,18 @@ $link-hover-color: $dracula-pink;
 
 .title-color {
     color: var(--bs-dracula-pink);
+}
+
+.parentWrapper {
+    box-sizing: border-box;
+}
+
+.cas_logo {
+    opacity: .8;
+}
+
+.cas_logo:hover {
+    opacity: 1;
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

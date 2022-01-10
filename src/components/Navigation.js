@@ -5,11 +5,11 @@ const Navigation = () => {
   return (
     <Navbar variant="dark">
       <Container>
-        <Navbar.Brand>
+        <Navbar.Brand className="cas_logo">
           <img
             src="./brand.png"
-            width="30"
-            height="30"
+            width="40"
+            height="40"
             className="d-inline-block align-top"
             alt="Cascavel Logo"
           />
