@@ -17,7 +17,7 @@ const About = () => {
 />
     </Col>
     <Col className="px-0">
-    <img width="50%" src="./profile_pic.jpg" alt="Simão in the flesh"></img>
+    <img width="50%" src="./profile_pic.png" alt="Simão in the flesh"></img>
     </Col>
 </Row>
 <Row className="mt-4">
