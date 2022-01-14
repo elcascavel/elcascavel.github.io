@@ -9,12 +9,10 @@ import Footer from "./components/Footer";
 const App = () => { 
     return (
     <Suspense fallback="Loading...">
-        <Container fluid>
         <Navigation/>
         <About/>
         <Projects/>
         <Footer/>
-        </Container>
     </Suspense>
     );
 };

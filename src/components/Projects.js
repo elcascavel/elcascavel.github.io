@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const Projects = () => {
   const {t} = useTranslation();
   return (
-    <Container fluid id="projects" className="mt-4 text-center">
+    <Container id="projects" className="mt-4 text-center">
 <Row>
     <Col>
      <h2 className="title-color"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-person-workspace" viewBox="0 0 16 16">
