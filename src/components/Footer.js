@@ -3,7 +3,7 @@ import { Nav, Container } from "react-bootstrap";
 
 const Footer = () => {
   return (
-      <Container className="d-flex justify-content-center mt-4">
+      <Container fluid className="d-flex justify-content-center mt-4">
           <Nav>
             <Nav.Link href="https://github.com/elcascavel" target="_blank" rel="noreferrer noopener">
               <svg

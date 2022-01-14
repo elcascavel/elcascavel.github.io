@@ -1,22 +1,20 @@
 import React from "react";
 import { Suspense } from "react";
+import { Container } from "react-bootstrap";
 import About from "./components/About";
 import Navigation from "./components/Navigation";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-import { useTranslation } from "react-i18next";
 
-const App = () => {
-    const {t} = useTranslation();
-    
+const App = () => { 
     return (
     <Suspense fallback="Loading...">
-    <div className="parentWrapper">
+        <Container fluid>
         <Navigation/>
         <About/>
         <Projects/>
         <Footer/>
-        </div>
+        </Container>
     </Suspense>
     );
 };

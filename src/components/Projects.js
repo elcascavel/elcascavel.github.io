@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const Projects = () => {
   const {t} = useTranslation();
   return (
-    <Container id="projects" className="mt-4 text-center">
+    <Container fluid id="projects" className="mt-4 text-center">
 <Row>
     <Col>
      <h2 className="title-color"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-person-workspace" viewBox="0 0 16 16">
@@ -19,7 +19,7 @@ const Projects = () => {
   <Tab eventKey="snake" title="Snake (C++)">
     <Row className="align-items-center">
     <Col className="px-0">
-    <img src="./snake_gameplay.png" width="80%" alt="snake game screenshot"></img>
+    <img src="./snake_gameplay.png" className="img-fluid" width="80%" alt="snake game screenshot"></img>
     </Col>
     <Col>
     <p>{t('projects.snake')}</p>
@@ -30,8 +30,7 @@ const Projects = () => {
   <Tab eventKey="klochon" title="Klochon (JavaScript)">
   <Row className="align-items-center">
     <Col className="px-0">
-    <img className="d-none d-sm-block" src="./klochon-gta-api.gif" alt="klochon in action"></img>
-    <img className="d-none" src="./profile_pic.jpg" alt="klochon in action"></img>
+    <img className="img-fluid" src="./klochon-gta-api.gif" alt="klochon in action"></img>
     </Col>
     <Col className="mt-2">
     <p>{t('projects.klochon')}</p>

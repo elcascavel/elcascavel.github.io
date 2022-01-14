@@ -12,7 +12,7 @@ const Navigation = () => {
 
   return (
     <Navbar variant="dark">
-      <Container>
+      <Container fluid>
         <Navbar.Brand className="cas_logo">
           <img
             src="./brand.png"
@@ -31,8 +31,8 @@ const Navigation = () => {
           title={t('nav.select-language')}
           menuVariant="dark"
         >
-          <NavDropdown.Item as="button" onClick={changeLanguage} value='en'>English</NavDropdown.Item>
-          <NavDropdown.Item as="button" onClick={changeLanguage} value='pt'>Portuguese</NavDropdown.Item>
+          <NavDropdown.Item as="button" onClick={changeLanguage} value='en'>{t('nav.elements.english-button')}</NavDropdown.Item>
+          <NavDropdown.Item as="button" onClick={changeLanguage} value='pt'>{t('nav.elements.portuguese-button')}</NavDropdown.Item>
         </NavDropdown>
         </Container>
     </Navbar>

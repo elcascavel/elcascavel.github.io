@@ -2,7 +2,11 @@
   "nav": {
     "about": "Sobre",
     "projects": "Projetos",
-    "select-language": "Selecionar Idioma"
+    "select-language": "Selecionar Idioma",
+    "elements": {
+      "english-button": "English",
+      "portuguese-button": "Português"
+    }
   },
   "about" : {
     "known-as": "conhecido como",
