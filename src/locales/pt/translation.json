@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "select-language": "Selecionar Idioma"
+  },
+  "about" : {
+    "known-as": "conhecido como",
+    "on-the-web": "na web!",
+    "about": "Sobre Mim",
+    "intro": "Estou atualmente no 2º ano de licenciatura de Comunicação e Multimédia. Tenho experiência com PHP, JavaScript, C# e C++. Tecnologias incluem Unity. Este espaço foi feito para conhecer melhor o React!"
+  },
+  "projects": {
+    "title": "Projetos",
+    "snake": "Clone de Snake desenvolvido com C++ e SDL2.",
+    "klochon": "Klochon é um bot para o Discord que trabalha com o GTA API que fiz. Vai buscar ficheiros do GTA San Andreas de uma base de dados para facilitar edição de skins do jogo a modders.",
+    "gta-api": "Este é o API usado pelo Klochon. Foi desenvolvido com Express e JavaScript.",
+    "resumos": "Resumos para estudantes de Comunicação e Multimédia.",
+    "elements": {
+      "github-button": "Repositório Github",
+      "live-site-button": "Site ao Vivo"
+    }
+  }
+}
