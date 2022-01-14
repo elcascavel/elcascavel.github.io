@@ -1,6 +1,5 @@
 import React from "react";
 import { Suspense } from "react";
-import { Container } from "react-bootstrap";
 import About from "./components/About";
 import Navigation from "./components/Navigation";
 import Projects from "./components/Projects";

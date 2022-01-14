@@ -1,5 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Tabs, Tab, Button} from "react-bootstrap";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhp, faJs, faMarkdown } from "@fortawesome/free-brands-svg-icons";
+import { faKeyboard } from "@fortawesome/free-solid-svg-icons";
+
 import { useTranslation } from "react-i18next";
 
 const Projects = () => {
@@ -8,15 +13,12 @@ const Projects = () => {
     <Container id="projects" className="mt-4 text-center">
 <Row>
     <Col>
-     <h2 className="title-color"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-person-workspace" viewBox="0 0 16 16">
-  <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-  <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
-</svg> {t('projects.title')}</h2>
+     <h2 className="title-color"><FontAwesomeIcon icon={faKeyboard} /> {t('projects.title')}</h2>
     </Col>
 </Row>
 <Row className="mb-4">
 <Tabs fill justify defaultActiveKey="snake" className="mt-3 mb-3">
-  <Tab eventKey="snake" title="Snake (C++)">
+  <Tab eventKey="snake" title="Snake">
     <Row className="align-items-center">
     <Col className="px-0">
     <img src="./snake_gameplay.png" className="img-fluid" width="80%" alt="snake game screenshot"></img>
@@ -27,27 +29,30 @@ const Projects = () => {
     </Col>
     </Row>
   </Tab>
-  <Tab eventKey="klochon" title="Klochon (JavaScript)">
+  <Tab eventKey="klochon" title="Klochon">
   <Row className="align-items-center">
     <Col className="px-0">
     <img className="img-fluid" src="./klochon-gta-api.gif" alt="klochon in action"></img>
     </Col>
     <Col className="mt-2">
+      <p>Built with <FontAwesomeIcon icon={faJs} size="lg" /></p>
     <p>{t('projects.klochon')}</p>
     <Button href="https://github.com/elcascavel/Klochon" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">{t('projects.elements.github-button')}</Button>{' '}
     </Col>
     </Row>
   </Tab>
-  <Tab eventKey="gta-api" title="GTA API (JavaScript)">
+  <Tab eventKey="gta-api" title= "GTA API">
+  <p>Built with <FontAwesomeIcon icon={faJs} size="lg" /></p>
     <p>{t('projects.gta-api')}</p>
     <Button href="https://github.com/elcascavel/gta-api" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">{t('projects.elements.github-button')}</Button>{' '}
   </Tab>
   <Tab eventKey="resumos-cm" title="Resumos CM">
+    <FontAwesomeIcon icon={faMarkdown} size="lg" />
     <p>{t('projects.resumos')}</p>
     <Button href="https://github.com/elcascavel/ResumosCM" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">{t('projects.elements.github-button')}</Button>{' '}
     <Button className="mx-2 mt-m-0 mt-l-0 mt-xl-0 mt-2" href="https://elcascavel.me/ResumosCM" target="_blank" rel="noreferrer noopener" variant="outline-dracula-yellow">{t('projects.elements.live-site-button')}</Button>{' '}
   </Tab>
-  <Tab eventKey="online-shop" title="Online Shop (PHP)" disabled>
+  <Tab eventKey="online-shop" title="Online Shop" disabled>
     php
   </Tab>
 </Tabs>

@@ -1,5 +1,9 @@
 import React from "react";
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+
 import { useTranslation } from "react-i18next";
 import i18n from "../118n";
 
