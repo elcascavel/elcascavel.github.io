@@ -13,7 +13,7 @@ const About = () => {
     <Container id="about" className="mt-4 text-center">
 <Row className="align-items-center">
     <Col>
-<h3><span className="name-font">Simão Amaral</span>, {t('about.known-as')} <span className="nickname-font">Cascavel</span> {t('about.on-the-web')}</h3>
+<h1><span className="name-font">Simão Amaral</span></h1>
 <Typewriter
   options={{
     strings: ['<span style="color: var(--bs-dracula-pink);">College Student</span>', '<span style="color: var(--bs-dracula-green);">Programmer</span>'],

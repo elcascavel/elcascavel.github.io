@@ -52,8 +52,10 @@ const Projects = () => {
     <Button href="https://github.com/elcascavel/ResumosCM" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">{t('projects.elements.github-button')}</Button>{' '}
     <Button className="mx-2 mt-m-0 mt-l-0 mt-xl-0 mt-2" href="https://elcascavel.me/ResumosCM" target="_blank" rel="noreferrer noopener" variant="outline-dracula-yellow">{t('projects.elements.live-site-button')}</Button>{' '}
   </Tab>
-  <Tab eventKey="online-shop" title="Online Shop" disabled>
-    php
+  <Tab eventKey="online-shop" title="Online Shop">
+  <p>Built with <FontAwesomeIcon icon={faPhp} size="lg" /></p>
+    <p>{t('projects.online-shop')}</p>
+    <Button href="https://github.com/elcascavel/TH" target="_blank" rel="noreferrer noopener" variant="outline-dracula-purple">{t('projects.elements.github-button')}</Button>{' '}
   </Tab>
 </Tabs>
 </Row>

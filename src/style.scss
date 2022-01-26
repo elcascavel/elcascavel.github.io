@@ -48,12 +48,8 @@ $link-hover-color: $dracula-pink;
 
 .name-font {
     font-family: 'Signika Negative';
-    font-size: 35px;
-    animation: pulse 10s infinite;
-}
-
-.nickname-font:hover {
-    color: var(--bs-dracula-green);
+    font-size: 45px;
+    animation: pulse 5s infinite;
 }
 
 @keyframes pulse {
@@ -62,6 +58,9 @@ $link-hover-color: $dracula-pink;
     }
     50% { 
         color: var(--bs-dracula-pink);
+    }
+    95% { 
+        color: var(--bs-dracula-green);
     }
     100% { 
         color: var(--bs-dracula-white);
