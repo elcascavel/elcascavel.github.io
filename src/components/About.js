@@ -22,11 +22,8 @@ const About = () => {
   }}
 />
     </Col>
-    <Col className="px-0">
-    <img className="img-fluid rounded" width="80%" src="./profile_pic.png" alt="Simão in the flesh"></img>
-    </Col>
 </Row>
-<Row className="mt-4">
+<Row className="mt-5">
     <Col>
     <h2 className="title-color"><FontAwesomeIcon icon={faInfoCircle} />  {t('about.title')}</h2>
   <p>{t('about.intro')}</p>
