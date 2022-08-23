@@ -35,11 +35,14 @@ const Box = ({
 
   return (
     <div className="bg-gray-200 flex flex-col max-w-screen px-4 py-4 space-y-2 rounded-md">
-      <h3 className="font-semibold text-gray-900">{name}</h3>
+      <h3 className="text-lg font-semibold text-gray-900 sm:text-xl">{name}</h3>
       <p>{description}</p>
         <RenderLink linkTitle={linkTitle} link={link}/>
     </div>
   );
 };
+
+Box.propTypes = propTypes;
+Box.defaultProps = defaultProps;
 
 export default Box;
