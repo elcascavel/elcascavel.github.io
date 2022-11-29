@@ -13,6 +13,7 @@ const Navigation = (props) => {
           <div className="flex items-baseline space-x-4">
             {props.navigation.map((nav) => (
             <a
+              key={nav.id}
               href={nav.link}
               target="_blank"
               rel="noopener noreferrer"

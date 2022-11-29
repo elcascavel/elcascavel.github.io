@@ -10,12 +10,14 @@ import navigationLinks from "./data/navigationLinks.json";
 import projects from "./data/projects.json";
 import experience from "./data/relevantExperience.json";
 import about from "./data/about.json";
+import StackStats from "./shared/components/StackStats";
 
 const App = () => {
   return (
     <div className="bg-white antialiased space-y-6 mb-4">
       <Navigation navigation={navigationLinks} />
       <About about={about} />
+      <StackStats/>
       <Projects projects={projects} />
       <Experience experience={experience} />
     </div>
