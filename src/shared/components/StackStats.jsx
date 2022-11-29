@@ -17,7 +17,7 @@ const StackStats = () => {
   const getStackStats = () => {
     setLoading(true);
     fetch(
-      "https://api.stackexchange.com/2.3/users/10863615?order=desc&sort=reputation&site=stackoverflow",
+      "https://api.stackexchange.com/2.3/users/10863615?&site=stackoverflow",
     )
       .then((response) => response.json())
       .then((data) => {
