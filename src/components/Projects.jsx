@@ -1,4 +1,4 @@
-import { Box } from "./Box";
+import { Box } from "./_atoms/Box";
 
 const Projects = (props) => {
   return (

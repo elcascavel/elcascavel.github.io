@@ -1,8 +1,17 @@
   [
     {
       "id": 1,
-      "link": "https://www.linkedin.com/in/amaraljsr/",
-      "color": "text-sky-700",
-      "size": "lg"
+      "name": "About Me",
+      "href": "#aboutme"
+    },
+    {
+      "id": 2,
+      "name": "Featured Projects",
+      "href": "#featuredprojects"
+    },
+    {
+      "id": 3,
+      "name": "Work Experience",
+      "href": "#workexperience"
     }
   ]

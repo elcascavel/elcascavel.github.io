@@ -1,7 +1,7 @@
     {
-      "header": "Hello, I'm Simão Amaral 👋",
+      "title": "1. About Me",
       "portrait": "../assets/portrait.jpg",
-      "description": "I started to code in 2020 by taking on a behemoth sized Unity 3D project with no experience. Suffice to say it didn't go well. Enrolled back into college and dove deep into web development. I'm currently in my third and final year of college.",
-      "footer": "I am passionate about web development, web design and UX/UI design."
+      "body": "Hello! My name is Simão and lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["JavaScript", "React", "PHP", "Laravel"]
     }
   

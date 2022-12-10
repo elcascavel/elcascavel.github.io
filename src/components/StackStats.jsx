@@ -50,7 +50,7 @@ const StackStats = () => {
               fill="currentFill"
             />
           </svg>
-          <span class="sr-only">Loading...</span>
+          <span className="sr-only">Loading...</span>
         </div>
       ) : (
         <div className="max-w-screen bg-sky-200 flex flex-col mx-auto p-4 text-slate-900 sm:p-6 rounded-lg border border-sky-500">

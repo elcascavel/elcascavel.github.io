@@ -1,25 +1,26 @@
-import Navigation from "./shared/components/Navigation";
-import About from "./shared/components/About";
-import Projects from "./shared/components/Projects";
-import Experience from "./shared/components/Experience";
+import styles from "./common/styles/globals.scss";
 
-import "./index.css";
+import Navigation from "./components/_organisms/Navbar/Navbar";
+import Header from "./components/_organisms/Header/Header";
+import About from "./components/_organisms/About/About";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+
 import "./fontawesome";
 
 import navigationLinks from "./data/navigationLinks.json";
 import projects from "./data/projects.json";
 import experience from "./data/relevantExperience.json";
+import header from "./data/header.json";
 import about from "./data/about.json";
-import StackStats from "./shared/components/StackStats";
+import StackStats from "./components/StackStats";
 
 const App = () => {
   return (
-    <div className="bg-white antialiased space-y-6 mb-4">
+    <div>
       <Navigation navigation={navigationLinks} />
+      <Header header={header} />
       <About about={about} />
-      <StackStats/>
-      <Projects projects={projects} />
-      <Experience experience={experience} />
     </div>
   );
 };
