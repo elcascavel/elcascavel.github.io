@@ -1,4 +1,4 @@
-import { Box } from "./_atoms/Box";
+import { FeaturedProject } from "./_atoms/FeaturedProject/FeaturedProject";
 
 const Experience = (props) => {
   return (
@@ -7,7 +7,7 @@ const Experience = (props) => {
         <h1 className="font-semibold capitalize">Relevant Experience</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 justify-between gap-2 mt-4">
           {props.experience.map((experience) => (
-            <Box
+            <FeaturedProject
               key={experience.id}
               title={experience.title}
               description={experience.description}

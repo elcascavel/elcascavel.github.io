@@ -1,24 +1,28 @@
 [
     {
       "id": "1",
+      "featured": true,
       "title": "Núcleo de Estudantes de Comunicação e Multimédia",
-      "description": "I was responsible for managing this project to completion and played a pivotal role to developing its backend and frontend. We used Laravel and Vue.",
-      "linkTitle": "Source",
-      "link": "https://necm.utad.pt/"
+      "description": "I was responsible for managing this project to completion and played a pivotal role in developing its backend and frontend. We used Laravel and Vue.",
+      "image": "/assets/necm.jpg",
+      "link": "https://necm.utad.pt/",
+      "technologies": [
+        "Vue.js",
+        "Laravel"
+      ]
     },
     {
       "id": "2",
-      "title": "Snake",
-      "description": "Snake clone built with C++ using SDL2. Videogames have been a huge part of my life and though I play less and less, I'm still fascinated by them.",
-      "linkTitle": "Github",
-      "link": "https://github.com/elcascavel/Snake"
-    },
-    {
-      "id": "3",
-      "title": "Personal Website",
-      "description": "Built with React and Tailwind as a learning project.",
-      "linkTitle": "Source",
-      "link": "https://github.com/elcascavel/elcascavel.github.io"
+      "featured": true,
+      "title": "Red Dead Roleplay UCP",
+      "description": "Collaborative project, building a user control panel for this community boasting hundreds of players. I contributed with code and developed the website’s design.",
+      "image": "/assets/rdr_ucp.jpg",
+      "link": null,
+      "technologies": [
+        "Next.js",
+        "SCSS",
+        "Figma"
+      ]
     }
   ]
   

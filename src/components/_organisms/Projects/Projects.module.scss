@@ -1,0 +1,18 @@
+@import "../../../common/styles/";
+
+.container {
+    display: flex;
+
+    @include respond("sm") {
+        padding: 0 128px 0 128px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.title {
+    color: $blue;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 0 128px 0 128px;
+}
