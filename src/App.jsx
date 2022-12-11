@@ -4,7 +4,7 @@ import Navigation from "./components/_organisms/Navbar/Navbar";
 import Header from "./components/_organisms/Header/Header";
 import About from "./components/_organisms/About/About";
 import Projects from "./components/_organisms/Projects/Projects";
-import Experience from "./components/Experience";
+import Experience from "./components/_organisms/Experience/Experience";
 
 import "./fontawesome";
 
@@ -22,6 +22,7 @@ const App = () => {
       <Header header={header} />
       <About about={about} />
       <Projects projects={projects} />
+      <Experience experience={experience} />
     </div>
   );
 };
