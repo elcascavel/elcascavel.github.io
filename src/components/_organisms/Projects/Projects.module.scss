@@ -2,12 +2,21 @@
 
 .container {
     display: flex;
+    flex-direction: column;
 
     @include respond("sm") {
         padding: 0 128px 0 128px;
         display: flex;
+        width: 50%;
+        flex-direction: column;
         justify-content: space-between;
     }
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
 }
 
 .title {
@@ -15,4 +24,12 @@
     font-weight: 500;
     font-size: 20px;
     padding: 0 128px 0 128px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }

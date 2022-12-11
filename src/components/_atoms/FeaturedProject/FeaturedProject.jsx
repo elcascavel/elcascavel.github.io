@@ -23,32 +23,14 @@ export const FeaturedProject = ({
   link,
 }) => {
   return (
-    <div className={styles["container"]}>
-      <img className={styles["project-image"]} src={image} alt={title} />
+    <div>
       <div className={styles["project-content"]}>
-        <h3 className={styles["project-title"]}>{title}</h3>
-        <p>{description}</p>
-        {link ? (
-          <a href={link}>
-            <FontAwesomeIcon icon={faLink} />
-          </a>
-        ) : (
-          <a href={link}>
-            <FontAwesomeIcon icon={faLink} color={"#888"} />
-          </a>
-        )}
-      </div>
-      <div className={styles["project-footer"]}>
-        <div className={styles["technology-list"]}>
-          {technologies.map((technology) => {
-            return (
-              <span key={technology} className={styles["project-technology"]}>
-                {technology}
-              </span>
-            );
-          })}
+        <div className={styles["project-description"]}>
+          <h3 className={styles["title"]}>{title}</h3>
+          <p>{description}</p>
         </div>
       </div>
+      <img className={styles["project-image"]} src={image} alt={title} />
     </div>
   );
 };

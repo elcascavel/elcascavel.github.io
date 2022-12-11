@@ -5,21 +5,23 @@ const Projects = (props) => {
   return (
     <div>
       <h2 className={styles["title"]}>2. Featured Projects</h2>
-      <div id="featuredprojects" className={styles["container"]}>
+      <ul id="featuredprojects" className={styles["container"]}>
         {props.projects.map((project) => {
           return (
-            <FeaturedProject
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              link={project.link}
-              technologies={project.technologies}
-              linkTitle={project.linkTitle}
-            />
+            <li key={project.id}>
+              <FeaturedProject
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                link={project.link}
+                technologies={project.technologies}
+                linkTitle={project.linkTitle}
+              />
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };
