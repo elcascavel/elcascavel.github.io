@@ -7,7 +7,7 @@
     gap: 16px;
     padding: 0 24px 0 24px;
 
-    @include respond("sm") {
+    @include respond("lg") {
         padding: 0 128px 0 128px;
     }
 }

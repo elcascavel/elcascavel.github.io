@@ -8,7 +8,7 @@ const Projects = (props) => {
       <ul id="featuredprojects" className={styles["container"]}>
         {props.projects.map((project) => {
           return (
-            <li key={project.id}>
+            <li className={styles["list-item"]} key={project.id}>
               <FeaturedProject
                 key={project.id}
                 title={project.title}

@@ -3,15 +3,11 @@
 .navbar-container {
         display: none;
         justify-content: space-between;
-        flex-direction: row;
         align-items: center;
 
     @include respond("sm") {
         height: 90px;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
         padding: 0 24px 0 24px;
     }
 }
