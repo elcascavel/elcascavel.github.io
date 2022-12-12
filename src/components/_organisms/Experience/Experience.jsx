@@ -3,7 +3,7 @@ import styles from "./Experience.module.scss";
 
 const Experience = (props) => {
   return (
-    <div className={styles["container"]}>
+    <div id="workexperience" className={styles["container"]}>
       <h2 className={styles["title"]}>3. Relevant Experience</h2>
       <div className={styles["tab-group"]}>
         <Tab.Group>

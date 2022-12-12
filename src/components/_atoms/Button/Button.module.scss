@@ -1,0 +1,19 @@
+@import "../../../common/styles/";
+
+.button {
+  font-size: 14px;
+  padding: 8px 8px;
+  text-align: center;
+
+  border: 1px solid $blue;
+  color: $blue;
+  background-color: transparent;
+  cursor: pointer;
+
+  margin-left: 8px;
+
+  &:hover {
+    background-color: $blue;
+    color: $background;
+  }
+}
