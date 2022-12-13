@@ -5,6 +5,7 @@ import Header from "./components/_organisms/Header/Header";
 import About from "./components/_organisms/About/About";
 import Projects from "./components/_organisms/Projects/Projects";
 import Experience from "./components/_organisms/Experience/Experience";
+import Contact from "./components/_organisms/Contact/Contact";
 
 import "./fontawesome";
 
@@ -23,6 +24,7 @@ const App = () => {
       <About about={about} />
       <Projects projects={projects} />
       <Experience experience={experience} />
+      <Contact/>
     </div>
   );
 };
