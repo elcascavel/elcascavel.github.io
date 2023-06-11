@@ -8,6 +8,7 @@ import { useUser } from "@/hooks/useUser";
 import Modal from "./Modal";
 import { useState } from "react";
 import Input from "./Input";
+import DynamicInput from "./DynamicInputs";
 import Button from "./Button";
 
 import { toast } from "react-hot-toast";
@@ -76,6 +77,9 @@ const CreateProjectModal = () => {
           title: values.title,
           description: values.description,
           link: values.link,
+          technologies: Array.isArray(values.technologies)
+            ? values.technologies
+            : [values.technologies],
           image_path: imageData.path,
         });
 
@@ -115,6 +119,11 @@ const CreateProjectModal = () => {
           disabled={isLoading}
           {...register("description", { required: true })}
           placeholder="Project description"
+        />
+        <DynamicInput
+          id="technologies"
+          disabled={isLoading}
+          {...register("technologies")}
         />
         <Input
           id="link"
