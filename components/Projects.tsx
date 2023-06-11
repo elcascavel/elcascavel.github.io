@@ -4,7 +4,9 @@ import { MdOutlineWork } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
-import useUploadModal from "@/hooks/useCreateProjectModal";
+import useCreateProjectModal from "@/hooks/useCreateProjectModal";
+
+import SidebarProjectItem from "./SidebarProjectItem";
 
 import { Project } from "@/types";
 
@@ -12,9 +14,9 @@ interface ProjectsProps {
   projects: Project[];
 }
 
-const Projects = () => {
+const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const authModal = useAuthModal();
-  const uploadModal = useUploadModal();
+  const createProjectModal = useCreateProjectModal();
   const { user } = useUser();
 
   const onClick = () => {
@@ -22,7 +24,7 @@ const Projects = () => {
       return authModal.onOpen();
     }
 
-    return uploadModal.onOpen();
+    return createProjectModal.onOpen();
   };
 
   return (
@@ -42,7 +44,15 @@ const Projects = () => {
                 transition"
         />
       </div>
-      <div className="flex flex-col gap-y-2 mt-4 px-3">Project #1</div>
+      <div className="flex flex-col gap-y-2 mt-4 px-3">
+        {projects.map((project) => (
+          <SidebarProjectItem
+            onClick={() => {}}
+            key={project.id}
+            data={project}
+          />
+        ))}
+      </div>
     </div>
   );
 };

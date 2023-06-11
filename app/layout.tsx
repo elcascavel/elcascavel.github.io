@@ -5,6 +5,7 @@ import SupabaseProvider from "@/providers/SupabaseProvider";
 import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToasterProvider";
+import getProjects from "@/actions/getProjects";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -13,11 +14,14 @@ export const metadata = {
   description: "Portfolio of Simão Amaral",
 };
 
-export default function RootLayout({
+export const revalidate = 0;
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const projects = await getProjects();
   return (
     <html lang="en">
       <body className={font.className}>
@@ -25,7 +29,7 @@ export default function RootLayout({
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider />
-            <Sidebar>{children}</Sidebar>
+            <Sidebar projects={projects}>{children}</Sidebar>
           </UserProvider>
         </SupabaseProvider>
       </body>
