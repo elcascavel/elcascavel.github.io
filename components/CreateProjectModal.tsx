@@ -119,7 +119,7 @@ const CreateProjectModal = () => {
         <Input
           id="link"
           disabled={isLoading}
-          {...register("link", { required: true })}
+          {...register("link", { required: false })}
           placeholder="Project link"
         />
         <div>
