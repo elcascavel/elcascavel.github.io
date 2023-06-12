@@ -11,7 +11,7 @@ const ProjectContent = () => {
 
   const [loading, setLoading] = useState(false);
 
-  return <div>lol</div>;
+  return <div>Project Content!</div>;
 };
 
 export default ProjectContent;

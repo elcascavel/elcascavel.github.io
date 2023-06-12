@@ -2,7 +2,7 @@ import { Project } from "@/types";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 
-const getProjects = async (): Promise<Project[]> => {
+const getSingleProject = async (id?: string): Promise<Project> => {
     const supabase = createServerComponentClient({
         cookies: cookies
     });
@@ -10,7 +10,8 @@ const getProjects = async (): Promise<Project[]> => {
     const { data, error } = await supabase
     .from('projects')
     .select('*')
-    .order('created_at', { ascending: false });
+    .eq('id', id)
+    .single();
 
     if (error) {
         console.log(error);
@@ -19,4 +20,4 @@ const getProjects = async (): Promise<Project[]> => {
     return (data as any) || [];
 };
 
-export default getProjects;
+export default getSingleProject;
