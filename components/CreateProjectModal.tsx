@@ -8,15 +8,21 @@ import { useUser } from "@/hooks/useUser";
 import Modal from "./Modal";
 import { useState } from "react";
 import Input from "./Input";
-import DynamicInput from "./DynamicInputs";
 import Button from "./Button";
 
 import { toast } from "react-hot-toast";
 import uniqid from "uniqid";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
+import { Technology } from "@/types";
 
-const CreateProjectModal = () => {
+interface CreateProjectModalProps {
+  technologies: Technology[];
+}
+
+const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
+  technologies,
+}) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const createProjectModal = useCreateProjectModal();
@@ -29,6 +35,7 @@ const CreateProjectModal = () => {
       title: "",
       description: "",
       image: null,
+      technologies: [],
       author: "",
       link: "",
     },
@@ -120,11 +127,24 @@ const CreateProjectModal = () => {
           {...register("description", { required: true })}
           placeholder="Project description"
         />
-        <DynamicInput
-          id="technologies"
-          disabled={isLoading}
-          {...register("technologies")}
-        />
+        <div className="flex items-center">
+          {technologies.map((technology) => (
+            <>
+              <Input
+                id="technology"
+                type="checkbox"
+                disabled={isLoading}
+                {...register("technologies", { required: true })}
+                key={technology.id}
+                value={technology.name}
+                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label className="ml-2 text-sm" htmlFor="technology">
+                {technology.name}
+              </label>
+            </>
+          ))}
+        </div>
         <Input
           id="link"
           disabled={isLoading}

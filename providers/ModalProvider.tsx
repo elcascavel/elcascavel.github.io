@@ -4,8 +4,13 @@ import { useEffect, useState } from "react";
 
 import AuthModal from "@/components/AuthModal";
 import CreateProjectModal from "@/components/CreateProjectModal";
+import { Technology } from "@/types";
 
-const ModalProvider = () => {
+interface ModalProviderProps {
+  technologies: Technology[];
+}
+
+const ModalProvider: React.FC<ModalProviderProps> = ({ technologies }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -17,7 +22,7 @@ const ModalProvider = () => {
   return (
     <>
       <AuthModal />
-      <CreateProjectModal />
+      <CreateProjectModal technologies={technologies} />
     </>
   );
 };

@@ -48,7 +48,9 @@ const SidebarProjectItem: React.FC<SidebarProjectItemProps> = ({
       </div>
       <div className="flex flex-col gap-y-1 overflow-hidden">
         <p className="text-white truncate">{data.title}</p>
-        <p className="text-neutral-400 truncate">{data.description}</p>
+        <p className="text-neutral-400 truncate">
+          {data.technologies.join(", ")}
+        </p>
       </div>
     </div>
   );
