@@ -17,11 +17,11 @@ const Greeting: React.FC<GreetingProps> = () => {
   let greeting;
 
   if (timeOfDay === "morning") {
-    greeting = "Good morning!";
+    greeting = "Good morning";
   } else if (timeOfDay === "afternoon") {
-    greeting = "Good afternoon!";
+    greeting = "Good afternoon";
   } else {
-    greeting = "Good evening!";
+    greeting = "Good evening";
   }
 
   return greeting;
