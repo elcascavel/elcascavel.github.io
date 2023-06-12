@@ -127,32 +127,35 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
           {...register("description", { required: true })}
           placeholder="Project description"
         />
-        <div className="flex items-center">
-          {technologies.map((technology) => (
-            <>
-              <Input
-                id="technology"
-                type="checkbox"
-                disabled={isLoading}
-                {...register("technologies", { required: true })}
-                key={technology.id}
-                value={technology.name}
-                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              />
-              <label className="ml-2 text-sm" htmlFor="technology">
-                {technology.name}
-              </label>
-            </>
-          ))}
-        </div>
         <Input
           id="link"
           disabled={isLoading}
           {...register("link", { required: false })}
           placeholder="Project link"
         />
+        <p className="text-sm leading-normal">Technologies</p>
+        <div className="grid grid-cols-2 gap-4">
+          {technologies.map((technology) => (
+            <div key={technology.id} className="flex items-center">
+              <Input
+                id={technology.id}
+                type="checkbox"
+                disabled={isLoading}
+                {...register("technologies", { required: true })}
+                value={technology.name}
+                className="w-4 h-4 text-green-600 accent-green-500 rounded"
+              />
+              <label
+                className="ml-2 text-sm flex items-center"
+                htmlFor={technology.id}
+              >
+                <span className="flex-grow">{technology.name}</span>
+              </label>
+            </div>
+          ))}
+        </div>
         <div>
-          <div className="pb-1">Select a project image</div>
+          <p className="text-sm leading-normal pb-1">Select a project image</p>
           <Input
             id="image"
             type="file"
