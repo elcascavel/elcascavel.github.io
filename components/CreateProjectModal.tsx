@@ -9,6 +9,7 @@ import Modal from "./Modal";
 import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
+import TextArea from "./TextArea";
 
 import { toast } from "react-hot-toast";
 import uniqid from "uniqid";
@@ -121,11 +122,12 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
           {...register("title", { required: true })}
           placeholder="Project title"
         />
-        <Input
+        <TextArea
           id="description"
           disabled={isLoading}
           {...register("description", { required: true })}
           placeholder="Project description"
+          rows={5}
         />
         <Input
           id="link"
