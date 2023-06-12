@@ -2,6 +2,7 @@
 
 import useLoadImage from "@/hooks/useLoadImage";
 import { Project } from "@/types";
+import { useRouter } from "next/navigation";
 
 import Image from "next/image";
 
@@ -12,9 +13,16 @@ interface ProjectItemProps {
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ data, onClick }) => {
   const imagePath = useLoadImage(data);
+  const router = useRouter();
+
+  const handleClick = () => {
+    onClick(data.id);
+    router.push(`/projects/${data.id}`);
+  };
+
   return (
     <div
-      onClick={() => onClick(data.id)}
+      onClick={handleClick}
       className="
         relative
         group
