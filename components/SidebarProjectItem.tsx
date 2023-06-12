@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import useLoadImage from "@/hooks/useLoadImage";
 import { Project } from "@/types";
 import Image from "next/image";
@@ -14,7 +15,12 @@ const SidebarProjectItem: React.FC<SidebarProjectItemProps> = ({
   onClick,
 }) => {
   const imageUrl = useLoadImage(data);
-  const handleClick = () => onClick(data.id);
+  const router = useRouter();
+
+  const handleClick = () => {
+    onClick(data.id);
+    router.push(`/projects/${data.id}`);
+  };
 
   return (
     <div
@@ -42,7 +48,7 @@ const SidebarProjectItem: React.FC<SidebarProjectItemProps> = ({
         <Image
           fill
           src={imageUrl || "/images/placeholder.png"}
-          alt="proj item"
+          alt={"Project Image " + data.title}
           className="object-cover"
         />
       </div>
