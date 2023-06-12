@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import ProjectContent from "./components/ProjectContent";
 
 import getSingleProject from "@/actions/getSingleProject";
+import ProjectHeader from "./components/ProjectHeader";
 
 export const revalidate = 0;
 
@@ -14,7 +15,7 @@ export default async function Project({
   return (
     <div
       className="
-        bg-neutral-900 
+      bg-gradient-to-b from-neutral-800 
         rounded-lg 
         h-full 
         w-full 
@@ -23,9 +24,7 @@ export default async function Project({
       "
     >
       <Header className="from-bg-neutral-900">
-        <div className="mb-2 flex flex-col gap-y-6">
-          <h1 className="text-white text-3xl font-semibold">{project.title}</h1>
-        </div>
+        <ProjectHeader project={project} />
       </Header>
       <div className="mt-2 mb-7 px-6">
         <ProjectContent project={project} />
