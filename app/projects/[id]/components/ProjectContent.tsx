@@ -1,17 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { Project } from "@/types";
 
-import { useUser } from "@/hooks/useUser";
+interface ProjectContentProps {
+  project: Project;
+}
 
-const ProjectContent = () => {
-  const router = useRouter();
-  const { isLoading } = useUser();
+const ProjectContent: React.FC<ProjectContentProps> = ({ project }) => {
+  return (
+    <div>
+      <p className="text-neutral-400 leading-relaxed my-4">
+        {project.description}
+      </p>
 
-  const [loading, setLoading] = useState(false);
-
-  return <div>Project Content!</div>;
+      <h2 className="text-white text-2xl font-semibold">Technologies</h2>
+      <p className="text-neutral-400 leading-relaxed">
+        {project.technologies.join(", ")}
+      </p>
+    </div>
+  );
 };
 
 export default ProjectContent;

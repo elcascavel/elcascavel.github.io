@@ -27,7 +27,9 @@ export default async function Project({
           <h1 className="text-white text-3xl font-semibold">{project.title}</h1>
         </div>
       </Header>
-      <ProjectContent />
+      <div className="mt-2 mb-7 px-6">
+        <ProjectContent project={project} />
+      </div>
     </div>
   );
 }
