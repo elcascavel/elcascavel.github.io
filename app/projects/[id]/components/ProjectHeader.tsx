@@ -13,7 +13,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
 
   return (
     <div className="mb-2 flex flex-row items-center gap-x-6">
-      <div className="relative aspect-square w-48 md:w-60 h-full rounded-full overflow-hidden">
+      <div className="relative aspect-square w-48 md:w-60 h-full overflow-hidden">
         <Image
           className="object-cover w-full h-full"
           src={imagePath || "/images/music-placeholder.png"}
@@ -21,9 +21,17 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
           alt="Image"
         />
       </div>
-      <h1 className="text-white text-2xl md:text-4xl font-bold">
-        {project.title}
-      </h1>
+      <div className="flex flex-col gap-y-4">
+        <a
+          href={project.link}
+          className="text-white text-2xl md:text-4xl font-bold"
+        >
+          {project.title}
+        </a>
+        <div>
+          <p className="font-semibold">{project.author}</p>
+        </div>
+      </div>
     </div>
   );
 };

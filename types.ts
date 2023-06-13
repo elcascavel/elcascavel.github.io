@@ -1,6 +1,7 @@
 export interface Project {
     id: string;
     user_id: string;
+    link: string;
     author: string;
     title: string;
     technologies: string[];
