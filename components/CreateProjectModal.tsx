@@ -17,6 +17,10 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 import { Technology } from "@/types";
 
+import { EditorState, convertToRaw } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
 interface CreateProjectModalProps {
   technologies: Technology[];
 }
@@ -25,6 +29,8 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
   technologies,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
+
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   const createProjectModal = useCreateProjectModal();
   const { user } = useUser();
@@ -52,6 +58,9 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
   const onSubmit: SubmitHandler<FieldValues> = async (values) => {
     try {
       setIsLoading(true);
+
+      const contentState = editorState.getCurrentContent();
+      const description = JSON.stringify(convertToRaw(contentState));
 
       const imageFile = values.image[0];
 
@@ -83,7 +92,7 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
         .insert({
           user_id: user.id,
           title: values.title,
-          description: values.description,
+          description: description,
           link: values.link,
           technologies: Array.isArray(values.technologies)
             ? values.technologies
@@ -122,12 +131,29 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
           {...register("title", { required: true })}
           placeholder="Project title"
         />
-        <TextArea
-          id="description"
-          disabled={isLoading}
-          {...register("description", { required: true })}
+        <Editor
+          toolbarClassName="bg-neutral-700 text-neutral-900 text-sm border border-transparent rounded-md"
+          wrapperClassName="bg-neutral-700 border border-transparent rounded-md p-3 text-sm"
+          editorClassName="h-32"
+          readOnly={isLoading}
+          editorState={editorState}
+          onEditorStateChange={setEditorState}
+          toolbar={{
+            options: ["inline", "blockType", "list", "textAlign"],
+            inline: {
+              options: ["bold", "italic", "underline"],
+            },
+            blockType: {
+              options: ["Normal", "H1", "H2", "H3", "H4", "H5", "H6"],
+            },
+            list: {
+              options: ["unordered", "ordered"],
+            },
+            textAlign: {
+              options: ["left", "center", "right", "justify"],
+            },
+          }}
           placeholder="Project description"
-          rows={5}
         />
         <Input
           id="link"

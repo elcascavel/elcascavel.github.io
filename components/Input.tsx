@@ -16,8 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             bg-neutral-700
             border
             border-transparent
-            px-3
-            py-3
+            p-3
             text-sm
             file:border-0
             file:bg-transparent

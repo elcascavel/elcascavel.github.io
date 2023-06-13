@@ -24,10 +24,11 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
       <div className="flex flex-col gap-y-4">
         <a
           href={project.link}
-          className="text-white text-2xl md:text-4xl font-bold"
+          className="text-neutral-50 text-2xl md:text-4xl font-bold"
         >
           {project.title}
         </a>
+        <p className="text-neutral-50">{project.technologies.join(", ")}</p>
         <div>
           <p className="font-semibold">{project.author}</p>
         </div>

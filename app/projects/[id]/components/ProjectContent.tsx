@@ -1,22 +1,22 @@
 "use client";
 
 import { Project } from "@/types";
+import { Editor, EditorState, convertFromRaw } from "draft-js";
 
 interface ProjectContentProps {
   project: Project;
 }
 
 const ProjectContent: React.FC<ProjectContentProps> = ({ project }) => {
-  return (
-    <div>
-      <p className="text-neutral-400 leading-relaxed my-4">
-        {project.description}
-      </p>
+  const contentState = convertFromRaw(JSON.parse(project.description));
 
-      <h2 className="text-white text-2xl font-semibold">Technologies</h2>
-      <p className="text-neutral-400 leading-relaxed">
-        {project.technologies.join(", ")}
-      </p>
+  return (
+    <div className="relative leading-relaxed my-4 z-0">
+      <Editor
+        editorState={EditorState.createWithContent(contentState)}
+        onChange={() => {}}
+        readOnly={true}
+      />
     </div>
   );
 };
