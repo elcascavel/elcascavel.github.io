@@ -32,7 +32,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       <div className="flex items-center justify-between px-5 pt-4">
         <div className="inline-flex items-center gap-x-2">
           <MdOutlineWork className="text-neutral-400" size={26} />
-          <p className="text-neutral-400 font-medium text-md">My Projects</p>
+          <p className="text-neutral-400 font-medium text-md">
+            Sim&atilde;o&apos;s Projects
+          </p>
         </div>
         <AiOutlinePlus
           onClick={onClick}
