@@ -7,6 +7,11 @@ import { useUser } from "@/hooks/useUser";
 import { BiPencil, BiTrash } from "react-icons/bi";
 import Button from "@/components/Button";
 
+import deleteProject from "@/actions/deleteProject";
+import { useRouter } from "next/navigation";
+
+import { toast } from "react-hot-toast";
+
 interface ProjectHeaderProps {
   project: Project;
 }
@@ -14,6 +19,17 @@ interface ProjectHeaderProps {
 const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
   const { user } = useUser();
   const imagePath = useLoadImage(project);
+  const router = useRouter();
+
+  const handleDelete = async () => {
+    try {
+      await deleteProject(project.id);
+      toast.success("Project deleted!");
+      router.push("/");
+    } catch (error) {
+      toast.error("Failed to delete project.");
+    }
+  };
 
   return (
     <div className="mb-2 flex flex-row items-center gap-x-6">
@@ -46,7 +62,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
               </Button>
               <Button
                 onClick={() => {
-                  console.log("TODO: Delete project.");
+                  handleDelete();
                 }}
                 className="bg-white"
               >
