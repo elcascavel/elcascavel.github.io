@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useUser } from "@/hooks/useUser";
 import Button from "@/components/Button";
 
-import { AiFillEdit } from "react-icons/ai";
+import { BiPencil } from "react-icons/bi";
 import { MdVerified } from "react-icons/md";
 
 interface PageContentProps {}
@@ -40,7 +40,7 @@ const AboutHeader: React.FC<PageContentProps> = ({}) => {
                 }}
                 className="bg-white"
               >
-                <AiFillEdit size={16} />
+                <BiPencil size={16} />
               </Button>
             </div>
           )}

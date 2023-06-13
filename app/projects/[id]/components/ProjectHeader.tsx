@@ -4,7 +4,7 @@ import useLoadImage from "@/hooks/useLoadImage";
 import { Project } from "@/types";
 import Image from "next/image";
 import { useUser } from "@/hooks/useUser";
-import { BiTrash } from "react-icons/bi";
+import { BiPencil, BiTrash } from "react-icons/bi";
 import Button from "@/components/Button";
 
 interface ProjectHeaderProps {
@@ -38,9 +38,17 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
             <div className="flex gap-x-4 items-center">
               <Button
                 onClick={() => {
+                  console.log("TODO: Edit project.");
+                }}
+                className="bg-white"
+              >
+                <BiPencil size={16} />
+              </Button>
+              <Button
+                onClick={() => {
                   console.log("TODO: Delete project.");
                 }}
-                className="bg-white hover:opacity-100 hover:bg-red-500 hover:text-white"
+                className="bg-white"
               >
                 <BiTrash size={16} />
               </Button>
