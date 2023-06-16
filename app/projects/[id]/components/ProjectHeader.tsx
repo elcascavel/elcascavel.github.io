@@ -11,6 +11,8 @@ import deleteProject from "@/actions/deleteProject";
 import { useRouter } from "next/navigation";
 
 import { toast } from "react-hot-toast";
+import useAuthModal from "@/hooks/useAuthModal";
+import useEditProjectModal from "@/hooks/useEditProjectModal";
 
 interface ProjectHeaderProps {
   project: Project;
@@ -20,6 +22,17 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
   const { user } = useUser();
   const imagePath = useLoadImage(project);
   const router = useRouter();
+
+  const authModal = useAuthModal();
+  const editProjectModal = useEditProjectModal();
+
+  const onClick = () => {
+    if (!user) {
+      return authModal.onOpen();
+    }
+
+    return editProjectModal.onOpen(project);
+  };
 
   const handleDelete = async () => {
     try {
@@ -54,7 +67,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
             <div className="flex gap-x-4 items-center">
               <Button
                 onClick={() => {
-                  console.log("TODO: Edit project.");
+                  onClick();
                 }}
                 className="bg-white"
               >

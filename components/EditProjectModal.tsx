@@ -2,56 +2,65 @@
 
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
-import useCreateProjectModal from "@/hooks/useCreateProjectModal";
+import useEditProjectModal from "@/hooks/useEditProjectModal";
 import { useUser } from "@/hooks/useUser";
 
 import Modal from "./Modal";
 import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
-import TextArea from "./TextArea";
 
 import { toast } from "react-hot-toast";
 import uniqid from "uniqid";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
-import { Technology } from "@/types";
+import { Project, Technology } from "@/types";
 
-import { EditorState, convertToRaw } from "draft-js";
+import { EditorState, convertFromRaw, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-interface CreateProjectModalProps {
+interface EditProjectModalProps {
   technologies: Technology[];
+  project: Project;
 }
 
-const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
+const EditProjectModal: React.FC<EditProjectModalProps> = ({
   technologies,
+  project,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
-  const createProjectModal = useCreateProjectModal();
+  const editProjectModal = useEditProjectModal();
   const { user } = useUser();
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
 
+  let editorContent = project.description
+    ? EditorState.createWithContent(
+        convertFromRaw(JSON.parse(project.description))
+      )
+    : EditorState.createEmpty();
+
+  console.log(project.description);
+
   const { register, handleSubmit, reset } = useForm<FieldValues>({
     defaultValues: {
-      title: "",
-      description: "",
+      title: project.title,
+      description: editorContent,
       image: null,
-      technologies: [],
-      author: "",
-      link: "",
+      technologies: project.technologies,
+      author: project.author,
+      link: project.link,
     },
   });
 
   const onChange = (open: boolean) => {
     if (!open) {
       reset();
-      createProjectModal.onClose();
+      editProjectModal.onClose();
     }
   };
 
@@ -60,7 +69,7 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
       setIsLoading(true);
 
       const contentState = editorState.getCurrentContent();
-      const description = convertToRaw(contentState);
+      const description = JSON.stringify(convertToRaw(contentState));
 
       const imageFile = values.image[0];
 
@@ -79,7 +88,7 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
           .from("images")
           .upload(`image-${sanitizedTitle}-${uniqueID}`, imageFile, {
             cacheControl: "3600",
-            upsert: false,
+            upsert: true,
           });
 
       if (imageError) {
@@ -89,27 +98,28 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
 
       const { error: supabaseError } = await supabaseClient
         .from("projects")
-        .insert({
-          user_id: user.id,
+        .update({
           title: values.title,
           description: description,
           link: values.link,
           technologies: Array.isArray(values.technologies)
             ? values.technologies
             : [values.technologies],
-          image_path: imageData.path,
-        });
+          // Add image replacement functionality
+        })
+        .eq("id", project.id);
 
       if (supabaseError) {
         setIsLoading(false);
+        console.log("ERROR: " + supabaseError);
         return toast.error(supabaseError.message);
       }
 
       router.refresh();
       setIsLoading(false);
-      toast.success("Project created!");
+      toast.success("Project edited!");
       reset();
-      createProjectModal.onClose();
+      editProjectModal.onClose();
     } catch (error) {
       toast.error("Something went wrong");
     } finally {
@@ -119,9 +129,9 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
 
   return (
     <Modal
-      title="Add a project"
-      description="Create a new project"
-      isOpen={createProjectModal.isOpen}
+      title="Edit a project"
+      description="Edit your project"
+      isOpen={editProjectModal.isOpen}
       onChange={onChange}
     >
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
@@ -193,11 +203,11 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
           />
         </div>
         <Button disabled={isLoading} type="submit">
-          Create project
+          Edit project
         </Button>
       </form>
     </Modal>
   );
 };
 
-export default CreateProjectModal;
+export default EditProjectModal;

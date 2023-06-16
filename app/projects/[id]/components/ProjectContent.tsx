@@ -9,16 +9,9 @@ interface ProjectContentProps {
 
 const ProjectContent: React.FC<ProjectContentProps> = ({ project }) => {
   const contentState = convertFromRaw(JSON.parse(project.description));
+  const plainText = contentState.getPlainText();
 
-  return (
-    <div className="relative leading-relaxed my-4 z-0">
-      <Editor
-        editorState={EditorState.createWithContent(contentState)}
-        onChange={() => {}}
-        readOnly={true}
-      />
-    </div>
-  );
+  return <div className="relative leading-relaxed my-4 z-0">{plainText}</div>;
 };
 
 export default ProjectContent;

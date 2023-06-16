@@ -4,13 +4,18 @@ import { useEffect, useState } from "react";
 
 import AuthModal from "@/components/AuthModal";
 import CreateProjectModal from "@/components/CreateProjectModal";
-import { Technology } from "@/types";
+import { Project, Technology } from "@/types";
+import EditProjectModal from "@/components/EditProjectModal";
 
 interface ModalProviderProps {
   technologies: Technology[];
+  selectedProject: Project;
 }
 
-const ModalProvider: React.FC<ModalProviderProps> = ({ technologies }) => {
+const ModalProvider: React.FC<ModalProviderProps> = ({
+  technologies,
+  selectedProject,
+}) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -19,10 +24,13 @@ const ModalProvider: React.FC<ModalProviderProps> = ({ technologies }) => {
 
   if (!isMounted) return null;
 
+  console.log(selectedProject);
+
   return (
     <>
       <AuthModal />
       <CreateProjectModal technologies={technologies} />
+      <EditProjectModal project={selectedProject} technologies={technologies} />
     </>
   );
 };

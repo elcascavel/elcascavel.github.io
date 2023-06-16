@@ -7,6 +7,8 @@ import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToasterProvider";
 import getProjects from "@/actions/getProjects";
 import getTechnologies from "@/actions/getTechnologies";
+import getSingleProject from "@/actions/getSingleProject";
+import { Project } from "@/types";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -31,7 +33,10 @@ export default async function RootLayout({
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider technologies={technologies} />
+            <ModalProvider
+              selectedProject={projects[0]}
+              technologies={technologies}
+            />
             <Sidebar projects={projects}>{children}</Sidebar>
           </UserProvider>
         </SupabaseProvider>
