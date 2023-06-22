@@ -1,7 +1,7 @@
     {
       "title": "1. About Me",
       "portrait": "../assets/portrait.jpg",
-      "body": "Hello! My name is Simão. I've always focused on digital media and online platforms. When I discovered the React framework, I immediately knew it was the perfect fit for me. I have also been able to collaborate with other students on group projects, using React to bring our ideas to life. I've even used it to create a user control panel used by hundreds of people! I am excited to continue learning and exploring React as I complete my Bachelor's degree in Communication & Multimedia.",
+      "body": "Hello! My name is Simão. I've always focused on digital media and online platforms. When I discovered the React framework, I immediately knew it was the perfect fit for me. I have also been able to collaborate with other students on group projects.",
       "skills": ["JavaScript", "React", "PHP", "Laravel"]
     }
   

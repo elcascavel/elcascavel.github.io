@@ -14,10 +14,10 @@
     {
       "id": "2",
       "featured": true,
-      "title": "Red Dead Roleplay UCP - Work In Progress",
-      "description": "Collaborative project, building a user control panel for this community boasting hundreds of players. I contributed with code and developed the website’s design.",
+      "title": "Red Dead Roleplay UCP - Retired",
+      "description": "Collaborative project, building a user control panel for this community boasting hundreds of players. I contributed with code and developed the website’s design. The server was closed and as such the UCP is no longer available.",
       "image": "/assets/rdr_ucp.jpg",
-      "link": null,
+      "link": "https://www.figma.com/file/MHx19qGbjoKKGjSUtKzfv0/UCP?type=design&node-id=0%3A1&t=LMiogBsu6oXSeZgY-1",
       "technologies": [
         "Next.js",
         "SCSS",

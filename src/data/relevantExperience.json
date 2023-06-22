@@ -1,12 +1,25 @@
 [
     {
       "id": "1",
+      "company": "EDP",
+      "title": "Digital Designer Internship",
+      "date": "May 2023 - July 2023 (expected)",
+      "tasks": [
+        "Produced wireframes;",
+        "Designed final UIs, based on the requirements of the project set by the product owner;",
+        "Communication with different teams in an Agile environment."
+      ],
+      "linkTitle": "Company Website",
+      "link": "https://www.edp.com"
+    },
+    {
+      "id": "2",
       "company": "X-Plora",
       "title": "Backend Intern",
       "date": "June 2022 - September 2022",
       "tasks": [
-        "Summer internship working on a company project which allowed companies to provide virtual tours to customers.",
-        "Developed and maintained code using Laravel for the backend.",
+        "Summer internship working on a company project which allowed companies to provide virtual tours to customers;",
+        "Developed and maintained code using Laravel for the backend;",
         "Communication with different teams in an Agile environment."
       ],
       "linkTitle": "Company Website",
