@@ -5,7 +5,6 @@ import Header from "./components/_organisms/Header/Header";
 import About from "./components/_organisms/About/About";
 import Projects from "./components/_organisms/Projects/Projects";
 import Experience from "./components/_organisms/Experience/Experience";
-import Contact from "./components/_organisms/Contact/Contact";
 
 import "./fontawesome";
 
@@ -14,7 +13,6 @@ import projects from "./data/projects.json";
 import experience from "./data/relevantExperience.json";
 import header from "./data/header.json";
 import about from "./data/about.json";
-import StackStats from "./components/StackStats";
 
 const App = () => {
   return (
@@ -24,7 +22,6 @@ const App = () => {
       <About about={about} />
       <Projects projects={projects} />
       <Experience experience={experience} />
-      <Contact/>
     </div>
   );
 };
